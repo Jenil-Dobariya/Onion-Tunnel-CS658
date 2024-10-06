@@ -1,5 +1,6 @@
 /darknet_img
 /tor_img
+/vpn_img
 /venv
 
 *.csv
