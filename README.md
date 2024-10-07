@@ -28,3 +28,19 @@
 
 - Follow all steps above till 'create images'
 - run ```python3 model.py``` after putting the filename ```image_info_*.csv``` accordingly.
+
+# Classification Reports on different datasets
+
+## CICDarknet2020 dataset
+
+![darknet classification report](classification_reports/darknet_classfication_report.png)
+
+
+## ISCX Tor-NonTor dataset
+
+![tor classification report](classification_reports/tor_classfication_report.png)
+
+
+## ISCX VPN-NonVPN dataset
+
+![vpn classification report](classification_reports/vpn_classfication_report.png)
