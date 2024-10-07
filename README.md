@@ -38,9 +38,9 @@
 
 ## ISCX Tor-NonTor dataset
 
-![tor classification report](classification_reports/tor_classfication_report.png)
+![tor classification report](classification_reports/tor_classification_report.png)
 
 
 ## ISCX VPN-NonVPN dataset
 
-![vpn classification report](classification_reports/vpn_classfication_report.png)
+![vpn classification report](classification_reports/vpn_classification_report.png)
