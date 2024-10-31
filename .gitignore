@@ -1,6 +1,8 @@
-/darknet_img
-/tor_img
-/vpn_img
+/*_img
 /venv
+/logs
 
 *.csv
+*.pcap
+
+tmp.py
