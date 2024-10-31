@@ -5,4 +5,4 @@
 *.csv
 *.pcap
 
-tmp.py
+!selected_features*.csv
