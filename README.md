@@ -21,6 +21,10 @@ source venv/bin/activate
 ```
 pip install requirements.txt
 ```
+- install libpcap to use pcap to csv convertor
+```
+sudo apt-get install libpcap-dev
+```
 
 # PCAP to CSV with labels
 
