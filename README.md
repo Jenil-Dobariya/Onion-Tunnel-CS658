@@ -6,40 +6,61 @@
 
 ## Setting up the Environment
 
-- run ```python3 -m venv venv``` to setup virtual python environment
-- run ```source venv/bin/activate``` to start virtual environment
+- run the following command to setup virtual python environment
+```
+python3 -m venv venv
+```
+- run the following command to start virtual environment
+```
+source venv/bin/activate
+```
 
 ## Install Dependencies
 
-- run ```pip install requirements.txt``` to install all the dependencies needed
+- run the following command to install all the dependencies needed
+```
+pip install requirements.txt
+```
 
 # PCAP to CSV with labels
 
 - Convert PCAP files to CSV using the following commands :
-- ```chmod +x convert_pcap_with_label.sh```
-- ```./convert_pcap_with_label.sh <path_to_directory_with_pcap_files> <label_for_data>```
-- label_for_data must be one of 'tor', 'vpn' or 'non-darknet'
-- These commands will generate ```output.csv```.
+```
+chmod +x convert_pcap_with_label.sh
+```
+```
+./convert_pcap_with_label.sh <path_to_directory_with_pcap_files> <label_for_data>
+```
+- label_for_data must be one of `tor`, `vpn` or `non-darknet`
+- These commands will generate `output.csv`.
 
 # PCAP to CSV
 
 - Convert PCAP files to CSV using the following commands :
-- ```chmod +x convert_pcap.sh```
-- ```./convert_pcap.sh <path_to_directory_with_pcap_files>```
-- These commands will generate ```output.csv```.
+```
+chmod +x convert_pcap.sh
+```
+```
+./convert_pcap.sh <path_to_directory_with_pcap_files>
+```
+- These commands will generate `output.csv`.
 
 # Training the model
 
 - Convert PCAP to CSV with labels before training the model
 - Use the following command to train the model :
-- ```python3 train.py <csv_filename>```
+```
+python3 train.py <csv_filename>
+```
 - The model will be trained and stored as `model.h5`
 
 # Testing the model
 
 - Convert PCAP to CSV with labels before testing the model
 - Use the following command to test the model :
-- ```python3 test.py <csv_filename>```
+```
+python3 test.py <csv_filename>
+```
 - The classification report will be displayed on terminal
 
 # Prediction with the model
@@ -47,14 +68,20 @@
 ## By PCAP files
 
 - Use the following commands for prediction using PCAP:
-- ```chmod +x predict.sh```
-- ```./predict.sh <path_to_directory_with_pcap_files>```
+```
+chmod +x predict.sh
+```
+```
+./predict.sh <path_to_directory_with_pcap_files>
+```
 - Alert will be generated according to predicted anomaly
 
 ## By CSV file
 
 - Use the following command to test the model :
-- ```python3 predict.py <csv_filename>```
+```
+python3 predict.py <csv_filename>
+```
 - Alert will be generated according to predicted anomaly
 
 # Classification Report
