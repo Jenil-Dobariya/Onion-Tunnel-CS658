@@ -1,8 +1,8 @@
-# Steps to test the model
+# Setting up the code
 
 ## Download the datasets
 
-- Install Darknet and Tor-NonTor (ISCX) dataset from here : https://www.unb.ca/cic/datasets/index.html
+- Install Darknet and Tor-NonTor (ISCX) dataset (PCAP files) from here : https://www.unb.ca/cic/datasets/index.html
 
 ## Setting up the Environment
 
@@ -13,34 +13,52 @@
 
 - run ```pip install requirements.txt``` to install all the dependencies needed
 
-## Create images
+# PCAP to CSV with labels
 
-- run ```python3 data_to_img*.py``` to convert data into image (name of CSVs are hardcoded so don't forget to change them)
-- code will ask you the name of directory to save the images
-- Images will need at least 600-700 MB of space for Darknet dataset so choose path with sufficient space
+- Convert PCAP files to CSV using the following commands :
+- ```chmod +x convert_pcap_with_label.sh```
+- ```./convert_pcap_with_label.sh <path_to_directory_with_pcap_files> <label_for_data>```
+- label_for_data must be one of 'tor', 'vpn' or 'non-darknet'
+- These commands will generate ```output.csv```.
 
-## Testing the Model
+# PCAP to CSV
 
-- run ```python3 test.py``` to test model on generated images
-- code will ask about csv for image info, put the filename ```image_info_*.csv``` according to the code executed in above step
+- Convert PCAP files to CSV using the following commands :
+- ```chmod +x convert_pcap.sh```
+- ```./convert_pcap.sh <path_to_directory_with_pcap_files>```
+- These commands will generate ```output.csv```.
 
-## Training the Model
+# Training the model
 
-- Follow all steps above till 'create images'
-- run ```python3 model.py``` after putting the filename ```image_info_*.csv``` accordingly.
+- Convert PCAP to CSV with labels before training the model
+- Use the following command to train the model :
+- ```python3 train.py <csv_filename>```
+- The model will be trained and stored as `model.h5`
 
-# Classification Reports on different datasets
+# Testing the model
 
-## CICDarknet2020 dataset
+- Convert PCAP to CSV with labels before testing the model
+- Use the following command to test the model :
+- ```python3 test.py <csv_filename>```
+- The classification report will be displayed on terminal
 
-![darknet classification report](classification_reports/darknet_classfication_report.png)
+# Prediction with the model
 
+## By PCAP files
 
-## ISCX Tor-NonTor dataset
+- Use the following commands for prediction using PCAP:
+- ```chmod +x predict.sh```
+- ```./predict.sh <path_to_directory_with_pcap_files>```
+- Alert will be generated according to predicted anomaly
 
-![tor classification report](classification_reports/tor_classification_report.png)
+## By CSV file
 
+- Use the following command to test the model :
+- ```python3 predict.py <csv_filename>```
+- Alert will be generated according to predicted anomaly
 
-## ISCX VPN-NonVPN dataset
+# Classification Report
 
-![vpn classification report](classification_reports/vpn_classification_report.png)
+- CICDarknet2020 dataset combined with ISCX Tor-NonTor (PCAP) dataset
+
+![darknet classification report](classification_reports/combined_classification_report_torPCAP_darknet.png)

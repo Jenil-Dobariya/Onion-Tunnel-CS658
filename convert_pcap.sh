@@ -1,18 +1,12 @@
 #!/bin/bash
 
 # Check if an input directory path is provided
-if [ $# -ne 2 ]; then
-    echo "Usage: $0 <path_to_directory_with_pcap_files> <label>"
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <path_to_directory_with_pcap_files>"
     exit 1
 fi
 
 input_dir="$1"
-label="$2"
-
-if [[ "$label" != "tor" && "$label" != "vpn" && "$label" != "non-darknet" ]]; then
-    echo "Error: label must be one of 'tor', 'vpn', or 'non-darknet'."
-    exit 1
-fi
 
 # Check if the provided path is a directory
 if [ ! -d "$input_dir" ]; then
@@ -55,8 +49,6 @@ for csv_file in ./data/out/*.csv; do
         tail -n +2 "$csv_file" >> "$output_csv"
     fi
 done
-
-sed -i "s/No Label/$label/g" "$output_csv"
 
 # Clean up the ./data directory and logs
 rm -rf ./data
