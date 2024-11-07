@@ -2,7 +2,7 @@
 
 ## Download the datasets
 
-- Install Darknet and Tor-NonTor (ISCX) dataset (PCAP files) from here : https://www.unb.ca/cic/datasets/index.html
+- Install Darknet ( Dark web - CICDarknet2020), Tor-NonTor (ISCX) and VPN-NonVPN (ISCX) dataset (PCAP files) from here : https://www.unb.ca/cic/datasets/index.html
 
 ## Setting up the Environment
 
