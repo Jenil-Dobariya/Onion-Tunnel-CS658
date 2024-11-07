@@ -38,17 +38,6 @@ chmod +x convert_pcap_with_label.sh
 - label_for_data must be one of `tor`, `vpn` or `non-darknet`
 - These commands will generate `output.csv`.
 
-# PCAP to CSV
-
-- Convert PCAP files to CSV using the following commands :
-```
-chmod +x convert_pcap.sh
-```
-```
-./convert_pcap.sh <path_to_directory_with_pcap_files>
-```
-- These commands will generate `output.csv`.
-
 # Training the model
 
 - Convert PCAP to CSV with labels before training the model
@@ -66,6 +55,17 @@ python3 train.py <csv_filename>
 python3 test.py <csv_filename>
 ```
 - The classification report will be displayed on terminal
+
+# PCAP to CSV
+
+- Convert PCAP files to CSV using the following commands :
+```
+chmod +x convert_pcap.sh
+```
+```
+./convert_pcap.sh <path_to_directory_with_pcap_files>
+```
+- These commands will generate `output.csv`.
 
 # Prediction with the model
 
